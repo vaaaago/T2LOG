@@ -1,30 +1,26 @@
-#include "UnionFindO.h"
+#include "UnionFindOpt.h"
 
 UnionFind::UnionFind(int n) {
     this->n = n;
     parent = new int[n];
-    size = new int[n];
+    size = new int[n]; //tamaño del conjunto
     for (int i = 0; i < n; ++i) {
         parent[i] = i;   // Cada nodo es su propio representante
-        size[i] = 1;     // Cada conjunto empieza con tamaño 1
+        size[i] = 1;     // Cada conjunto empieza con Size 1
     }
 }
 
-UnionFind::~UnionFind() {
-    delete[] parent;
-    delete[] size;
-}
 
-int UnionFind::find(int u) {
+int UnionFind::Find(int u) {
     if (u != parent[u]) {
-        parent[u] = find(parent[u]);  // Path compression
+        parent[u] = Find(parent[u]);  // Optimizacion
     }
     return parent[u];
 }
 
-void UnionFind::unite(int u, int v) {
-    int rootU = find(u);
-    int rootV = find(v);
+void UnionFind::Union(int u, int v) {
+    int rootU = Find(u);
+    int rootV = Find(v);
 
     if (rootU == rootV) return;  // Ya están en el mismo conjunto
 

@@ -2,10 +2,10 @@
 #define KRUSKAL_HEAP_O_H
 
 #include <vector>
-#include "UnionFindO.h"
-#include "grafo.h"
+#include "UnionFindOpt.h"
+#include "estructuras.h"
 
 // Calcula el peso total del MST usando Kruskal con heap y UnionFind optimizado
 double kruskalHeap(const std::vector<Punto>& puntos);
 
-#endif // KRUSKAL_HEAP_O_H
+#endif
