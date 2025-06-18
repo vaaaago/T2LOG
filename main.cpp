@@ -41,38 +41,38 @@ int main(int argc, char* argv[]) {
     int exponente = std::atoi(argv[1]); //exponente de la potencia de dos puntos que se generaran
   
     //generacion de puntos
-    auto inicio = std::chrono::high_resolution_clock::now();
+    auto inicio_puntos = std::chrono::high_resolution_clock::now();
     
     std::vector<Punto> arreglo_puntos = generarPuntos(exponente);
 
    
-    auto fin = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duracion = fin - inicio;
-    std::cout << "Tiempo para generar puntos: " << duracion.count() << " segundos\n";
+    auto fin_puntos = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duracion_puntos = fin_puntos - inicio_puntos;
+    std::cout << "Tiempo para generar puntos: " << duracion_puntos.count() << " segundos\n";
 
     
     //Test algoritmo de Kruskal con arreglo:
 
     // Iniciar cronómetro
-    auto inicio = std::chrono::high_resolution_clock::now();
+    auto inicio_arreglo = std::chrono::high_resolution_clock::now();
 
     double peso_total_arreglo = kruskalArreglo(arreglo_puntos);
 
-    auto fin = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duracion = fin - inicio;
-    std::cout << "Tiempo para generar puntos: " << duracion.count() << " segundos\n";
+    auto fin_arreglo = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duracion_arreglo = fin_arreglo - inicio_arreglo;
+    std::cout << "Tiempo para generar puntos: " << duracion_arreglo.count() << " segundos\n";
     std::cout << "Peso total del MST con Kruskal con arreglo: " << peso_total_arreglo << "\n";
 
     //Test algoritmo de Kruskal con Heap:
 
     // Iniciar cronómetro
-    auto inicio = std::chrono::high_resolution_clock::now();
+    auto inicio_heap = std::chrono::high_resolution_clock::now();
 
     double peso_total_Heap = kruskalHeap(arreglo_puntos);
 
-    auto fin = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duracion = fin - inicio;
-    std::cout << "Tiempo para generar puntos: " << duracion.count() << " segundos\n";
+    auto fin_heap = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duracion_heap = fin_heap - inicio_heap;
+    std::cout << "Tiempo para generar puntos: " << duracion_heap.count() << " segundos\n";
     std::cout << "Peso total del MST con Kruskal con Heap: " << peso_total_Heap << "\n";
 
     return 0;
