@@ -4,7 +4,7 @@
 #include "estructuras.h"
 #include "KruskalArregloOpt.h"
 
-double kruskalArray(const std::vector<Punto>& puntos) {
+double kruskalArreglo(const std::vector<Punto>& puntos) {
     int n = puntos.size();
     std::vector<Arista> arreglo_aristas;
 

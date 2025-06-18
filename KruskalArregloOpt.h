@@ -6,7 +6,7 @@
 #include "estructuras.h"
 
 // Calcula el peso total del MST usando Kruskal con arreglo ordenado y UnionFind optimizado
-double kruskalArray(const std::vector<Punto>& puntos);
+double kruskalArreglo(const std::vector<Punto>& puntos);
 
 #endif
 
