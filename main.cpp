@@ -3,6 +3,7 @@
 #include <cmath>
 #include <iostream>
 #include <chrono>
+#include <iomanip>
 #include "estructuras.h"
 
 //comentar la version de Kruskal que no desee testear
@@ -40,6 +41,7 @@ int main(int argc, char* argv[]) {
 
     int exponente = std::atoi(argv[1]); //exponente de la potencia de dos puntos que se generaran
   
+    std::cout << std::fixed << std::setprecision(6); // Fuerza formato decimal con 6 decimales
     //generacion de puntos
     auto inicio_puntos = std::chrono::high_resolution_clock::now();
     
@@ -60,7 +62,7 @@ int main(int argc, char* argv[]) {
 
     auto fin_arreglo = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duracion_arreglo = fin_arreglo - inicio_arreglo;
-    std::cout << "Tiempo para generar puntos: " << duracion_arreglo.count() << " segundos\n";
+    std::cout << "Tiempo de Kruskal con arreglo: " << duracion_arreglo.count() << " segundos\n";
     std::cout << "Peso total del MST con Kruskal con arreglo: " << peso_total_arreglo << "\n";
 
     //Test algoritmo de Kruskal con Heap:
