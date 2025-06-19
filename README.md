@@ -37,6 +37,7 @@ si quiere probar con 2^10 puntos por ejemplo, entregue el numero 10 como argumen
 
 4. Para repetir el experimento con una secuencia del mismo largo o de otro largo, repita el paso 3.
 
+
 - Compilacion y ejecucion del algoritmo con optimización:
 
 1. en main.cpp comente y deje sin comentar los siguientes includes: 
