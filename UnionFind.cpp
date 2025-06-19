@@ -1,4 +1,3 @@
-// UnionFind.cpp
 #include "UnionFind.h"
 
 UnionFind::UnionFind(int n) {

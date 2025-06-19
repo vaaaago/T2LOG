@@ -74,7 +74,7 @@ int main(int argc, char* argv[]) {
 
     auto fin_heap = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duracion_heap = fin_heap - inicio_heap;
-    std::cout << "Tiempo para generar puntos: " << duracion_heap.count() << " segundos\n";
+    std::cout << "Tiempo de Kruskal con Heap: " << duracion_heap.count() << " segundos\n";
     std::cout << "Peso total del MST con Kruskal con Heap: " << peso_total_Heap << "\n";
 
     return 0;
